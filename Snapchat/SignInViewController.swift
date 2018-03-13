@@ -17,6 +17,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -36,6 +37,10 @@ class SignInViewController: UIViewController {
                         print("error: \(String(describing: error))")
                     } else {
                         print("success creating new user: \(String(describing: user))")
+                        
+                       let users = Database.database().reference().child("users")
+                        users.child(user!.uid).child("email").setValue(user!.email!)
+                        
                         self.performSegue(withIdentifier: "signInSegue", sender: nil)
                     }
                 })

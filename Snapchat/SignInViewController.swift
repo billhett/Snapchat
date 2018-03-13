@@ -35,11 +35,13 @@ class SignInViewController: UIViewController {
                     if error != nil {
                         print("error: \(String(describing: error))")
                     } else {
-                        print("success creating new user: \(user)")
+                        print("success creating new user: \(String(describing: user))")
+                        self.performSegue(withIdentifier: "signInSegue", sender: nil)
                     }
                 })
             } else {
                 print("signed in successfully: \(String(describing: user))")
+                self.performSegue(withIdentifier: "signInSegue", sender: nil)
             }
         }
     }

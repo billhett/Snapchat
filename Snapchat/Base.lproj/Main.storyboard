@@ -84,13 +84,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qq7-SB-cHc">
-                                <rect key="frame" x="99" y="408" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qq7-SB-cHc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qq7-SB-cHc" firstAttribute="leading" secondItem="cl0-mp-xXw" secondAttribute="leading" id="83M-Jr-MZg"/>
+                            <constraint firstItem="cl0-mp-xXw" firstAttribute="bottom" secondItem="qq7-SB-cHc" secondAttribute="bottom" id="Bau-tK-ceO"/>
+                            <constraint firstItem="cl0-mp-xXw" firstAttribute="trailing" secondItem="qq7-SB-cHc" secondAttribute="trailing" id="EjR-vD-U0V"/>
+                            <constraint firstItem="qq7-SB-cHc" firstAttribute="top" secondItem="cl0-mp-xXw" secondAttribute="top" id="lnt-61-3H0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cl0-mp-xXw"/>
                     </view>
                     <navigationItem key="navigationItem" id="LX8-KS-xq7">
@@ -105,6 +110,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="qq7-SB-cHc" id="lcu-1f-LIV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmE-9w-aen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

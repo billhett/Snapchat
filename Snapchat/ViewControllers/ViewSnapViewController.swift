@@ -7,7 +7,8 @@
 //
 
 import UIKit
-//import SDWebImage
+import SDWebImage
+import Firebase
 
 
 class ViewSnapViewController: UIViewController {
@@ -20,6 +21,7 @@ class ViewSnapViewController: UIViewController {
         super.viewDidLoad()
 
         descripLabel.text = snap.descrip
+        imageView.sd_setImage(with: URL(string: snap.imageURL))
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +29,10 @@ class ViewSnapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewWillDisappear(_ animated: Bool) {
+        //print("Goodbye snap")
+        Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("snaps").child(snap.key).removeValue()
+    }
    
 
 }

@@ -23,8 +23,24 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.dataSource = self
         tableView.delegate = self
         
-       // Database.database().reference().child("users").observe(DataEventType.childAdded, with: {(snapshot) in
+        // Database.database().reference().child("users").observe(DataEventType.childAdded, with: {(snapshot) in
         Database.database().reference().child("users").observe(DataEventType.childAdded, with: {(snapshot) in
+            print(snapshot)
+            
+            let user = User()
+            //user.email = snapshot.value["email"] as! String
+            //let myemail = (snapshot.value! as? [String : AnyObject])!
+            //print("myEmail = \(String(describing: myemail))")
+            //let thisEmail = ((snapshot.value! as? [String : AnyObject])!["email"])!
+            user.email = ((snapshot.value! as? [String : AnyObject])!["email"])! as! String
+            //print("this email : \(thisEmail)")
+            user.uid = snapshot.key
+            
+            self.users.append(user)
+            self.tableView.reloadData()
+        })
+        
+        Database.database().reference().child("users").observe(DataEventType.childRemoved, with: {(snapshot) in
             print(snapshot)
             
             let user = User()

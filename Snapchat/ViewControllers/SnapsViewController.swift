@@ -28,6 +28,7 @@ class SnapsViewController: UIViewController, UITableViewDataSource, UITableViewD
             snap.imageURL = ((snapshot.value! as? [String : AnyObject])!["imageURL"])! as! String
             snap.descrip = ((snapshot.value! as? [String : AnyObject])!["description"])! as! String
             snap.from = ((snapshot.value! as? [String : AnyObject])!["from"])! as! String
+            snap.key = snapshot.key
 //            -> not working //user.email = snapshot.value["email"] as! String
 //            let myemail = (snapshot.value! as? [String : AnyObject])!
 //            print("myEmail = \(String(describing: myemail))")

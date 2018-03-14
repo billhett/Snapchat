@@ -29,11 +29,11 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
             
             let user = User()
             //user.email = snapshot.value["email"] as! String
-            let myemail = (snapshot.value! as? [String : AnyObject])!
-            print("myEmail = \(String(describing: myemail))")
-            let thisEmail = (myemail["email"])!
-            user.email = thisEmail as! String
-            print("this email : \(thisEmail)")
+            //let myemail = (snapshot.value! as? [String : AnyObject])!
+            //print("myEmail = \(String(describing: myemail))")
+            //let thisEmail = ((snapshot.value! as? [String : AnyObject])!["email"])!
+            user.email = ((snapshot.value! as? [String : AnyObject])!["email"])! as! String
+            //print("this email : \(thisEmail)")
             user.uid = snapshot.key
             
             self.users.append(user)
@@ -62,6 +62,6 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
         let user = users[indexPath.row]
         let snap = ["from" : user.email, "description":descrip, "imageURL":imageURL]
         Database.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)
-        
+     navigationController?.popToRootViewController(animated: true)
     }
 }

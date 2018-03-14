@@ -112,11 +112,54 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="qq7-SB-cHc" id="lcu-1f-LIV"/>
+                        <segue destination="aUW-Ep-lAK" kind="show" identifier="viewSnapSegue" id="Sk6-mK-4Fg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmE-9w-aen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1333.5999999999999" y="105.69715142428787"/>
+        </scene>
+        <!--View Snap View Controller-->
+        <scene sceneID="KHI-Rj-AL2">
+            <objects>
+                <viewController id="aUW-Ep-lAK" customClass="ViewSnapViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f7A-IK-rqw" customClass="view">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="check out this amazing pic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odc-NN-ZsZ">
+                                <rect key="frame" x="5" y="636" width="365" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1vf-r5-GNy">
+                                <rect key="frame" x="10" y="74" width="355" height="552"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Odc-NN-ZsZ" firstAttribute="leading" secondItem="lNm-Ct-kMs" secondAttribute="leading" constant="5" id="3mr-8U-1Gv"/>
+                            <constraint firstItem="lNm-Ct-kMs" firstAttribute="trailing" secondItem="Odc-NN-ZsZ" secondAttribute="trailing" constant="5" id="4hH-du-CKh"/>
+                            <constraint firstItem="1vf-r5-GNy" firstAttribute="top" secondItem="lNm-Ct-kMs" secondAttribute="top" constant="10" id="Dsv-M3-lB4"/>
+                            <constraint firstItem="Odc-NN-ZsZ" firstAttribute="leading" secondItem="lNm-Ct-kMs" secondAttribute="leading" constant="5" id="V85-Fq-rxq"/>
+                            <constraint firstItem="1vf-r5-GNy" firstAttribute="leading" secondItem="lNm-Ct-kMs" secondAttribute="leading" constant="10" id="bL5-Ru-ILp"/>
+                            <constraint firstItem="lNm-Ct-kMs" firstAttribute="trailing" secondItem="1vf-r5-GNy" secondAttribute="trailing" constant="10" id="dP1-Nf-vCZ"/>
+                            <constraint firstItem="lNm-Ct-kMs" firstAttribute="bottom" secondItem="Odc-NN-ZsZ" secondAttribute="bottom" constant="10" id="gar-eu-6yK"/>
+                            <constraint firstItem="Odc-NN-ZsZ" firstAttribute="top" secondItem="1vf-r5-GNy" secondAttribute="bottom" constant="10" id="oYF-ag-aBb"/>
+                            <constraint firstItem="lNm-Ct-kMs" firstAttribute="bottom" secondItem="Odc-NN-ZsZ" secondAttribute="bottom" constant="10" id="ubQ-o6-fxy"/>
+                            <constraint firstItem="lNm-Ct-kMs" firstAttribute="trailing" secondItem="Odc-NN-ZsZ" secondAttribute="trailing" constant="5" id="zco-Qx-JVw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lNm-Ct-kMs"/>
+                    </view>
+                    <connections>
+                        <outlet property="descripLabel" destination="Odc-NN-ZsZ" id="CzM-Sv-9wq"/>
+                        <outlet property="imageView" destination="1vf-r5-GNy" id="tkv-au-JXD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nRS-UQ-Cja" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="979"/>
         </scene>
         <!--Picture View Controller-->
         <scene sceneID="KzY-b5-WYy">
